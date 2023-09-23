@@ -1,9 +1,9 @@
-import express from 'express';
+import express from 'express'
 
-let router = express.Router()
+const router = express.Router()
 
 router.get('/', function (req, res) {
-    res.send("This is where the APIs will be");
+  res.send('This is where the APIs will be')
 })
 
-export default router;
+export default router

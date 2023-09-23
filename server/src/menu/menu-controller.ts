@@ -1,10 +1,10 @@
-import express from 'express';
-import {menues} from "./menues";
+import express from 'express'
+import { menues } from './menues'
 
-let router = express.Router()
+const router = express.Router()
 
 router.get('/', function (req, res) {
-    res.send(menues)
+  res.send(menues)
 })
 
-export default router;
+export default router
