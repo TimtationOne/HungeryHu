@@ -1,1 +1,5 @@
 .idea
+
+# Server
+server/node_modules
+server/build
