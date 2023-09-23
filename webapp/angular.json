@@ -69,7 +69,8 @@
               "browserTarget": "HungryHu:build:production"
             },
             "development": {
-              "browserTarget": "HungryHu:build:development"
+              "browserTarget": "HungryHu:build:development",
+              "proxyConfig": "proxy.conf.js"
             }
           },
           "defaultConfiguration": "development"

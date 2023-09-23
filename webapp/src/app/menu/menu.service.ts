@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core'
 import {Menu} from "./menu";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 const menues: Array<Menu> = [
   {
@@ -23,7 +25,13 @@ const menues: Array<Menu> = [
   providedIn: 'root'
 })
 export class MenuService {
-  getMenus(): Array<Menu> {
-    return menues
+  private httpClient: HttpClient
+
+  constructor(private http: HttpClient) {
+    this.httpClient = http;
+  }
+
+  getMenus(): Observable<Array<Menu>> {
+    return this.httpClient.get<Array<Menu>>('/api/menus')
   }
 }

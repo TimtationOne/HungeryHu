@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core'
-import { MenuService } from '../menu.service'
-import { type Menu } from '../menu'
+import {Component, inject} from '@angular/core'
+import {MenuService} from '../menu/menu.service'
+import {type Menu} from '../menu/menu'
 
 @Component({
   selector: 'app-menue-overview',
@@ -11,7 +11,10 @@ export class MenuOverviewComponent {
   menuService: MenuService = inject(MenuService)
   menuList: Array<Menu> = []
 
-  constructor () {
-    this.menuList = this.menuService.getMenus()
+  constructor() {
+    this.menuService.getMenus().subscribe((data) => {
+      this.menuList = data
+      this.menuList.sort(() => Math.random() - 0.5)
+    })
   }
 }
